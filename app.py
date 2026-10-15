@@ -16,11 +16,18 @@ genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 FEEDS = [
-    ("Google AI Blog", "https://blog.research.google/feeds/posts/default"),
-    ("MIT Tech Review AI", "https://www.technologyreview.com/feed/"),
-    ("Hugging Face Blog", "https://huggingface.co/blog/feed.xml"),
-    ("OpenAI News", "https://openai.com/news/rss.xml"),
-    ("VentureBeat AI", "https://venturebeat.com/category/ai/feed/"),
+    # Official AI Research
+    ("Google AI Blog",       "https://blog.research.google/feeds/posts/default"),
+    ("Hugging Face Blog",    "https://huggingface.co/blog/feed.xml"),
+    # Academic & Research
+    ("ArXiv AI (CS.AI)",     "http://arxiv.org/rss/cs.AI"),
+    ("MIT Tech Review",      "https://www.technologyreview.com/feed/"),
+    # Student-Friendly
+    ("Towards Data Science", "https://towardsdatascience.com/feed"),
+    ("Analytics Vidhya",     "https://www.analyticsvidhya.com/feed/"),
+    # Verified Tech News
+    ("TechCrunch AI",        "https://techcrunch.com/category/artificial-intelligence/feed/"),
+    ("The Verge AI",         "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
 ]
 
 def fetch_articles(max_per_feed=3):
